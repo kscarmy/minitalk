@@ -6,13 +6,13 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 07:35:34 by guderram          #+#    #+#             */
-/*   Updated: 2021/10/13 07:35:54 by guderram         ###   ########.fr       */
+/*   Updated: 2021/10/13 08:00:21 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_pid()
+void	ft_pid(void)
 {
 	int	pid;
 
@@ -26,34 +26,27 @@ void	ft_pid()
 
 void	ft_wait_sig(int sig)
 {
-	static char	c; // char a print
-	static int	i; // compte les bits de c
+	static char	c;
+	static int	i;
 
 	if (--i == -1)
 	{
 		i = 6;
 		c = 0;
-		// printf("%u ", c);
-		// printf("|");
 	}
 	if (sig == SIGUSR1)
 	{
-		// printf("1");
 		c |= (1 << i);
 	}
 	if (i == 0)
 	{
-		// printf("| ");
-		// write(1, &c, 1);
 		ft_putchar(c);
-		// printf("%u", c);
-		// printf("\n");
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	argv = 0; // argv = 0 || NULL
+	argv = 0;
 	if (argc != 1)
 	{
 		ft_putstr("Erreur : ./server ne prend pas d'argument !\n");
@@ -62,6 +55,8 @@ int	main(int argc, char **argv)
 	ft_pid();
 	signal(SIGUSR1, ft_wait_sig);
 	signal(SIGUSR2, ft_wait_sig);
-	while (1);
+	while (1)
+	{
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 10:44:35 by guderram          #+#    #+#             */
-/*   Updated: 2021/10/13 07:35:52 by guderram         ###   ########.fr       */
+/*   Updated: 2021/10/13 07:52:54 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void			ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb != -2147483648)
 	{
