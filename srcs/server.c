@@ -46,7 +46,7 @@ void	ft_wait_sig(int sig)
 
 int	main(int argc, char **argv)
 {
-	argv = 0;
+	argv[0] = NULL;
 	if (argc != 1)
 	{
 		ft_putstr("Erreur : ./server ne prend pas d'argument !\n");

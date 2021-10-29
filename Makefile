@@ -31,8 +31,8 @@ $(NAME) :
 	@$(CC) $(CFLAGS) $(SRC_C) -c
 	@ar -rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@$(CC) $(CFLAGS) $(NAME) srcs/server.c -o server
-	@$(CC) $(CFLAGS) $(NAME) srcs/client.c -o client
+	@$(CC) $(CFLAGS) srcs/server.c $(NAME) -o server
+	@$(CC) $(CFLAGS) srcs/client.c $(NAME) -o client
 
 clean :
 	@rm -rf $(OBJS)
